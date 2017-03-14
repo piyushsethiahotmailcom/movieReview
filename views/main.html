@@ -1,0 +1,33 @@
+<div class="mainParentDiv">
+  <div class="searchMovies" >
+    <input type="text" ng-model="movieName.title" placeholder="Enter movie name and click to search" />
+    <div ng-show="showEmptyError" class="error alert-danger"> Please fill this first</div>
+    <button id="getMo" ng-click="getMovies()">Search</button>
+  </div>
+  <div class="movieInfo" ng-show="dataOrLoader">
+    <span class="Loader" ng-show="isLoading"></span>
+    <div class="posterInfo" ng-show="!isLoading">
+      <span class="imgCss">
+          <img ng-src="{{searchResp.poster}}">
+      </span>
+      <div class="infoCss">
+        <label>
+          Release Date : <span>{{searchResp.releaseDate}}</span>
+        </label>
+        <label>
+          Director : <span>{{searchResp.director}}</span>
+        </label>
+        <label>
+          Ratings : <span>{{searchResp.rating}}</span>
+        </label>
+        <label>
+          Actors : <span>{{searchResp.actors}}</span>
+        </label>
+        <label>
+          Your Ratings : <input type="text" ng-model="movieName.ratings" />
+        </label>
+      </div>
+      <button id="addMo" ng-click = "addToLib()"> Add TO Library</button>
+    </div>
+  </div>
+</div>

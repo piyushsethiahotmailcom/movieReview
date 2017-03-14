@@ -1,0 +1,26 @@
+<div class="libraryPage">
+	<div class="movieList">
+		<div class="listCss" ng-click = "flipDiv($index)" id = "movieBlock" ng-repeat="movie in savedMovies track by $index">
+				<div id="front" class="imgFront">
+					<img ng-src="{{movie.poster}}">
+				</div>
+				<div id="back" class="movieInfo">
+					<label>
+			          Release Date : <span>{{movie.releaseDate}}</span>
+			        </label>
+			        <label>
+			          Director : <span>{{movie.director}}</span>
+			        </label>
+			        <label>
+			          Ratings : <span>{{movie.rating}}</span>
+			        </label>
+			        <label>
+			          Actors : <span>{{movie.actors}}</span>
+			        </label>
+			        <label>
+			          Your Ratings : <span>{{movie.yourRating}}</span>
+			        </label>
+				</div>
+		</div>
+	</div>
+</div>
